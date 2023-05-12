@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&family=VT323&display=swap');
+
+:root {
+    --padding: 10vmin;
+
+    --ff-default: 'VT323', monospace;
+    --ff-secondary: 'Syne Mono', monospace;
+
+    --fs-normal: 1.25rem;
+    --fs-medium: 2.5rem;
+    --fs-large: 6rem;
+    --fs-larger: 7rem;
+
+    --clr-neutral-100: hsl(0, 0%, 95%);
+    --clr-neutral-600: hsl(0, 0%, 30%);
+    --clr-neutral-800: hsl(0, 0%, 8%);
+    --clr-neutral-transparent: hsla(0, 0%, 65%, 0.2);
+
+    --clr-accent-purple: hsl(268, 58%, 60%);
+    --clr-accent-green: hsl(120, 57%, 57%);
+    --clr-accent-orange: hsl(30, 91%, 47%);
+    --clr-accent-red: hsl(8, 87%, 44%);
+
+    --gradient: linear-gradient(90deg, rgba(0, 255, 39, 1) 0%, rgba(123, 7, 255, 1) 100%);
+}
+
+/* CSS reset starts */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* CSS reset ends */
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--ff-default);
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--clr-accent-red);
+    border-radius: 2px;
+}
+/* Loader starts */
+.loader {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--clr-neutral-100);
+    font-size: 2rem;
+}
+
+.progress {
+    position: absolute;
+    top: 60%;
+    width: 50%;
+    height: 1rem;
+    border-radius: 10rem;
+    background: var(--gradient);
+    transform: scaleX(100%);
+    transition: transform 1s;
+    transform-origin: left;
+    z-index: 100;
+    margin: 0 5%;
+}
+/* Loader ends */
+
+/* main styling starts */
+main {
+    position: relative;
+    display: grid;
+    justify-content: center;
+
+}
+h1, h2{
+    font-size: var(--fs-large);
+    font-weight: 400;
+}
+h3, h4{
+    position: absolute;
+    text-transform: uppercase;
+    color: var(--clr-neutral-transparent);
+    user-select: none;
+}
+h3{
+    top: 8%;
+    font-size: var(--fs-larger);
+}
+h4{
+    font-size: var(--fs-medium);
+}
+p{
+    font-size: var(--fs-normal);
+    font-family: var(--ff-secondary);
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    padding: var(--padding);
+    --pad2: calc(var(--padding) * 2);
+    width: calc(100vw - var(--pad2));
+}
+/* utils stars */
+.center{
+    justify-content: center;
+}
+
+.end{
+    justify-content: end;
+}
+
+.right{
+    place-items: end;
+}
+/* utils ends */
+
+.first{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.first > h2{
+    font-size: var(--fs-medium);
+    color: var(--clr-neutral-600);
+}
+
+.section__two__container{
+    max-width: 50%;
+}
+
+.section__two__container > h4 {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    right: 5%;
+}
+
+.section__three__container{
+    max-width: 50%;
+}
+
+.section__five__container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.section__five__container > h2{
+    max-width: 20%;
+}
+.section__five__container > p{
+    max-width: 20%;
+}
+
+.fifth > h4{
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+}
+
+.section__six__container {
+    max-width: 50%;
+}
