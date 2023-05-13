@@ -6,10 +6,10 @@
     --ff-default: 'VT323', monospace;
     --ff-secondary: 'Syne Mono', monospace;
 
-    --fs-normal: 1.25rem;
-    --fs-medium: 2.5rem;
-    --fs-large: 7.5rem;
-    --fs-larger: 9rem;
+    --fs-normal: 1.25vw;
+    --fs-medium: 2.5vw;
+    --fs-large: 7.5vw;
+    --fs-larger: 8.5vw;
 
     --clr-neutral-100: hsl(0, 0%, 95%);
     --clr-neutral-600: hsl(0, 0%, 30%);
@@ -111,7 +111,7 @@ main {
 }
 /* main styling starts */
 h1, h2{
-    font-size: 9rem;
+    font-size: var(--fs-larger);
     font-weight: 500;
 }
 h3, h4{
@@ -175,6 +175,16 @@ p{
     opacity: 0.2;
 }
 /* utils ends */
+
+.avatar{
+    position: absolute;
+    right: 20%;
+    top: 40%;
+    max-width: 15rem;
+    max-height: 15rem;
+    border-radius: 50%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 
 .first{
     display: flex;
