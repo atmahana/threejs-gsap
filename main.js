@@ -10,7 +10,7 @@ function init() {
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(COLORS.light);
-  scene.fog = new THREE.Fog(COLORS.light, 1, 17);
+  scene.fog = new THREE.Fog(COLORS.light, 1, 10);
 
   const size = {
     width: 0,
@@ -41,14 +41,14 @@ function init() {
   directionalLight.castShadow = true;
   directionalLight.shadow.camera.far = 50;
   directionalLight.shadow.mapSize.set(1024, 1024);
-  directionalLight.position.set(3, 10, 3);
-//   const dlHelper = new THREE.DirectionalLightHelper(
-//     directionalLight,
-//     2,
-//     "black"
-//   );
-//   dlHelper.update();
-//   scene.add(dlHelper);
+  directionalLight.position.set(0, 15, 5);
+  const dlHelper = new THREE.DirectionalLightHelper(
+    directionalLight,
+    2,
+    "black"
+  );
+  dlHelper.update();
+  scene.add(dlHelper);
 
   const hemiLight = new THREE.HemisphereLight(COLORS.sky, COLORS.ground, 0.5);
 
@@ -74,7 +74,7 @@ function init() {
   ];
 
   function setupAnimation() {
-    models.eva02.position.x = 100;
+    models.eva02.position.x = 20;
     models.eva01.position.set(2, 0, -1);
     ScrollTrigger.matchMedia({
       "(prefers-reduced-motion: no-preference)": desktopAnimation,
@@ -86,7 +86,7 @@ function init() {
     const tl = gsap.timeline({
       default: {
         duration: 1,
-        ease: "power2.inOut",
+        ease: "Expo.inOut",
       },
       scrollTrigger: {
         trigger: ".page",
@@ -96,15 +96,41 @@ function init() {
       },
     });
 
+    gsap.from(".section__one__container > h1", { autoAlpha: 0, duration: 1 });
     // Section 2
+    tl.from(".section__two__container > h2", { x: "-1000" }, ".second").from(
+      ".section__two__container > p",
+      { x: "-1000" },
+      "-=0.4",
+      ".second"
+    );
     tl.to(camera.position, { x: 3.5, y: 6, z: 2 }, ".second");
     tl.to(models.eva01.position, { x: 2, z: -2 }, ".second");
     tl.to(models.eva01.rotation, { y: -2 }, ".second");
 
     // Section 3
+    tl.from(
+      ".section__three__container > h3",
+      { x: "1000", delay: "1" },
+      ".third"
+    ).from(".section__three__container > p", { x: "1000" });
     tl.to(models.eva01.rotation, { y: 0 }, ".third");
     tl.to(camera.position, { x: -5, y: 5, z: 5 }, ".third");
     tl.to(models.eva01.position, { x: -5.7, z: 4.5 }, ".third");
+
+    // Section 4
+    tl.to(models.eva01.position, { x: "-30" }, ".four");
+    tl.to(models.eva02.rotation, { y: -1 }, ".four");
+    tl.to(models.eva02.position, { x: 1 }, ".four");
+    tl.to(camera.position, { x: 0, y: 5, z: 4 }, ".four");
+
+    // Section 5
+    tl.to(models.eva02.rotation, { y: 0 }, ".five");
+    tl.to(models.eva02.position, { x: -1, z: 3 }, ".five");
+    tl.to(camera.position, { x: 0, y: 5, z: 4 }, ".five");
+
+    // Section 6
+    // tl.to()
   }
 
   const LoadingManager = new THREE.LoadingManager(() => {

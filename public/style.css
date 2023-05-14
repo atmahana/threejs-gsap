@@ -13,7 +13,7 @@
 
     --clr-neutral-100: hsl(0, 0%, 95%);
     --clr-neutral-600: hsl(0, 0%, 30%);
-    --clr-neutral-800: hsl(0, 0%, 8%);
+    --clr-neutral-800: hsl(0, 0%, 15%);
     --clr-neutral-transparent: hsla(0, 0%, 65%, 0.2);
 
     --clr-accent-purple: hsl(268, 58%, 60%);
@@ -176,6 +176,10 @@ p{
 }
 /* utils ends */
 
+.avatar__container{
+    position: absolute;
+    right: 0;
+}
 .avatar{
     position: absolute;
     right: 20%;
