@@ -95,14 +95,17 @@ function init() {
         scrub: 1,
       },
     });
-
+    gsap.to("#svg", {
+      duration: 5,
+      motionPath: { path: "#path", autoRotate: true },
+    });
     gsap.from(".section__one__container > h1", { autoAlpha: 0, duration: 1 });
     // Section 2
-    tl.from(".section__two__container > h2", { x: "-1000" }, ".second").from(
+    tl.from(".section__two__container > h2", { x: "-1000" }, ".second")
+    .from(
       ".section__two__container > p",
       { x: "-1000" },
       "-=0.4",
-      ".second"
     );
     tl.to(camera.position, { x: 3.5, y: 6, z: 2 }, ".second");
     tl.to(models.eva01.position, { x: 2, z: -2 }, ".second");

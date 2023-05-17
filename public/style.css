@@ -107,9 +107,8 @@ main {
     display: grid;
     justify-content: center;
     z-index: 2;
-
 }
-/* main styling starts */
+
 h1, h2{
     font-size: var(--fs-larger);
     font-weight: 500;
@@ -133,6 +132,7 @@ p{
 }
 .section {
     display: flex;
+    position: relative;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
@@ -141,7 +141,7 @@ p{
     padding: var(--padding);
     --pad2: calc(var(--padding) * 2);
     width: calc(100vw - var(--pad2));
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 /* utils stars */
 .center{
@@ -176,14 +176,15 @@ p{
 }
 /* utils ends */
 
+/* main content styling starts */
 .avatar__container{
     position: absolute;
     right: 0;
 }
 .avatar{
     position: absolute;
-    right: 20%;
-    top: 40%;
+    /* right: 20%; */
+    /* top: 40%; */
     max-width: 15rem;
     max-height: 15rem;
     border-radius: 50%;

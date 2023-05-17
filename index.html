@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js" defer></script>
     <link rel="stylesheet" href="/style.css">
-    <title>EVA</title>
+    <link rel="stylesheet" href="/svg.css">
+    <title>Evangelion</title>
 </head>
 
 <body>
@@ -19,6 +21,21 @@
     <!-- TODO: Add pilot image on pilot name section -->
     <div class="canvas__container"></div>
     <main class="page">
+        <div class="svg__container1">
+            <svg class="line__path" width="90vw" height="50">
+                <line x1="0" y1="25" x2="100%" y2="25"/>
+            </svg>
+        </div>
+        <div class="svg__container2">
+            <div class="svg__object__container">
+                <svg class="svg" id="svg" height="100" width="100">
+                    <circle cx="25" cy="25" r="10" stroke="black" stroke-width="1" fill="red" />
+                  </svg>
+            </div>
+            <svg class="line__path" id="path" width="90vw" height="50">
+                <line x1="0" y1="25" x2="100%" y2="25"/>
+            </svg>
+        </div>
         <section class="section first">
             <div class="section__one__container">
                 <h1><span class="purple">EVA</span>-<span class="green">01</span></h1>
@@ -29,7 +46,7 @@
         <section class="section second center">
             <div class="section__two__container">
                 <h2>Ikari <span class="green">Shinji</span></h2>
-                <img src="/img/shinji-profile.jpg" alt="Shinji Ikari avatar" class="avatar">
+                <!-- <img src="/img/shinji-profile.jpg" alt="Shinji Ikari avatar" class="avatar"> -->
                 <h4>碇<span class="purple transparent">シンジ</span></h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate itaque amet nam
                     consequatur
@@ -56,6 +73,7 @@
         </section>
         <section class="section fifth center">
             <div class="section__five__container">
+                <!-- <img src="/img/asuka-profile.jpg" alt="Asuka Langley Shoryu avatar" class="avatar" style="right: 40%;"> -->
                 <h2><span class="orange">Asuka</span> Langley Sohryu</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nisi tempora incidunt odit repellendus
                     molestias ipsum amet cupiditate voluptate iusto. Exercitationem quod qui similique. Sapiente

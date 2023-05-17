@@ -1,0 +1,24 @@
+.svg__container1{
+    position: fixed;
+    width: 100%;
+    border: 2px solid blue;
+}
+.svg__container2{
+    position: fixed;
+    width: 100%;
+    border: 2px solid green;
+    bottom: 0;
+}
+.line__path{
+    display: block;
+    margin: auto;
+    stroke:rgb(255,0,0);
+    stroke-width:2;
+}
+.svg__object__container{
+    position: relative;
+}
+.svg{
+    position: fixed;
+    left: 4%;
+}
